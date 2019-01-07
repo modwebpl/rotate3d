@@ -79,8 +79,7 @@ export class rot3d {
     this._move = 0;
 
     if (dir === 'right') {
-      if (this._cur >= this._fps + 1) this._cur = this._startFrom;
-      else if (this._cur < this._startFrom) this._cur = this._startFrom;
+      this._cur >= this._fps + 1 ? this._cur = this._startFrom : this._cur < this._startFrom ? this._cur = this._startFrom;
 
       this._prev = this._cur;
       this._img.src = `${this._dir}${this._cur}.png`;
