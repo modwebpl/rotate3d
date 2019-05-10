@@ -1,9 +1,7 @@
+import {Hammer} from './hammer.js';
+
 export class rot3d {
   constructor(conf = {id = 'rot3d', imageDir, image, fps, cursor, from = 1}) {
-    this.init(conf);
-  }
-
-  init(conf) {
     if (!this._setVars(conf)) return;
     this._setEvents();
   }
@@ -16,18 +14,18 @@ export class rot3d {
     _this._app = document.getElementById(this._conf.id);
     if (!this._app) return false;
 
-    _this._img = this._app.querySelector(this._conf.image) || this._app.getElementsByTagName('img')[0];
+    _this._img = this._app.getElementsByClassName(this._conf.image)[0] || this._app.getElementsByTagName('img')[0];
     if (!this._img && !isImage(this._img)) return false;
 
     _this._ev = {};
     _this._move = 0;
 
-    _this._fps = this._conf.fps || parseInt(this._app.getAttribute('data-fps'));
+    _this._fps = this._conf.fps || parseInt(this._app.datasrc.fps);
 
     _this._prev = this._conf.from || 1;
     _this._cur = this._conf.from || 1;
 
-    _this._dir = this._conf.imageDir || this._app.getAttribute('data-dir');
+    _this._dir = this._conf.imageDir || this._app.datasrc.dir;
     _this._imgArr = [];
 
     return true;
