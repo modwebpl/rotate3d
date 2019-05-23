@@ -15,7 +15,7 @@ export class rot3d {
     if (!this._app) return false;
 
     _this._img = this._app.getElementsByClassName(this._conf.image)[0] || this._app.getElementsByTagName('img')[0];
-    if (!this._img && !isImage(this._img)) return false;
+    if (!this._img || !el instanceof HTMLImageElement) return false;
 
     _this._ev = {};
     _this._move = 0;
