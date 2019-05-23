@@ -41,7 +41,8 @@ export class rot3d {
 
     this._imgArr = [];
 
-    for (let i = this._conf.from || 1; i <= this._fps; i++) {
+    let i = this._conf.from || 1;
+    for (i; i <= this._fps; i++) {
       let img = new Image();
       img.src = `${this._dir}${i}.png`;
 
