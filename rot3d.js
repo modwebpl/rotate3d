@@ -1,7 +1,7 @@
 import {Hammer} from './hammer.js';
 
 export class rot3d {
-  constructor(conf = {id = 'rot3d', imageDir, image, fps, cursor, from = 1}) {
+  constructor(conf = {id = 'r3d', imageDir, image, fps, cursor, from = 1}) {
     if (!this._setVars(conf)) return;
     this._setEvents();
   }
