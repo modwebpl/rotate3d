@@ -61,7 +61,7 @@ export class rot3d {
     });
 
     this._ev.on('pan panend press panleft panright', (e) => {
-      e.type === 'panleft' ? this._moveLeft() : e.type === 'panright' ? this._moveRight() : e.type === 'panend' ? this._move = 0 : '';
+      e.type === 'panleft' ? this._moveLeft() : e.type === 'panright' ? this._moveRight() : e.type === 'panend' ? this._move = 0 : void 0;
     });
   }
 
