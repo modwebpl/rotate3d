@@ -48,7 +48,7 @@ export class rot3d {
 
       img.onload = () => {
         this._imgArr.push(i);
-        this._imgArr.length === this._fps ? this._setDrag() : '';
+        return this._imgArr.length === this._fps ? this._setDrag() : void 0;
       };
     }
   }
