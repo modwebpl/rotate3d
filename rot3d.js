@@ -67,18 +67,18 @@ export class rot3d {
 
   _moveLeft() {
     this._move += 1;
-    if (this._move === 1) this._loadImage('left');
+    if (this._move === 1) this._loadImage(true);
   }
 
   _moveRight() {
     this._move += 1;
-    if (this._move === 1) this._loadImage('right');
+    if (this._move === 1) this._loadImage(false);
   }
 
   _loadImage(dir) {
     this._move = 0;
 
-    if (dir === 'right') {
+    if (!dir) {
       this._cur >= this._fps + 1 ? this._cur = this._conf.from : this._cur < this._conf.from ? this._cur = this._conf.from;
 
       this._prev = this._cur;
@@ -86,7 +86,7 @@ export class rot3d {
       this._cur += 1;
     }
 
-    if (dir === 'left') {
+    if (dir) {
 
       if (this._cur === this._conf.from) {
         this._cur = this._fps;
